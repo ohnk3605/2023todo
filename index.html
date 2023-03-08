@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .bg {background-repeat: no-repeat;}
+        .bg{background-repeat: no-repeat;}
          .btn_modi{
             display: none;
             
         }
-        .inpWrap{width: 1280px;height: 800px;}
+        .inpWrap{
+            width: 1280px;height: 800px;
+        }
         .listView{
             width: 300px;
-            margin: 0 auto;
-            
+            margin: 0 auto;            
         }
 
         .listView {
-            background: #c2991e;           
+            background: #c2991e;
+            float: left;           
         }
         .listView ul li{
             display: flex; 
@@ -54,7 +56,7 @@
     <i class="fa-solid fa-hammer"></i>
     <i class="fa-solid fa-square-check"></i> -->
 
-    <div class="bg"style="background-image: url(../2023web/images/hj.jpg);">
+    <div class="bg" style="background-image: url(../2023web/images/hj.jpg);">
         <div class="inpWrap">
             <input type="hidden" class="num">
             <input type="text" class="inp">
@@ -67,6 +69,7 @@
             
         </div>
     </div>
+
     <script>
         let listData = []
         // let obj ={todo:"자바스트립트1",done:false}
@@ -183,6 +186,7 @@
             localStorage.setItem("todoData",valueData)
             btnIpEl.style.display = "inline-block"
             btnMoEl.style.display = "none"
+            inpEl.focus()
             viewData()
         }
     </script>
