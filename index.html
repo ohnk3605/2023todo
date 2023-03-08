@@ -5,29 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <style>
+        .bg {background-repeat: no-repeat;}
          .btn_modi{
-            display: none;   
+            display: none;
+            
         }
-
-        .inpWrap, 
+        .inpWrap{width: 1280px;height: 800px;}
         .listView{
             width: 300px;
             margin: 0 auto;
+            
         }
-        .lnpWrap{background-color: skyblue;}
 
         .listView {
-            background: pink;
+            background: #c2991e;           
         }
         .listView ul li{
             display: flex; 
             margin-bottom: 5px 0;
         }
-        .listView ul li .list{display: flex;align-items: center;padding-left: 10px;}
+        .listView ul li .list{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
 
         .listView ul .icon{
             margin-left: auto;
@@ -39,7 +44,8 @@
             gap: 10px;
         }
         .listView ul li .icon a{color: white;}
-        .item.done{background: blue;}
+
+        .item.done{background: #6A44C9;}
     </style>
 </head>
 
@@ -48,16 +54,18 @@
     <i class="fa-solid fa-hammer"></i>
     <i class="fa-solid fa-square-check"></i> -->
 
-    <div class="inpWrap">
-        <input type="hidden" class="num">
-        <input type="text" class="inp">
-        <button class="btn_input">입력</button>
-        <button class="btn_modi">수정</button>
-    </div>
-
-    <div class="listView">
-        <ul></ul>
-        <button class="btnAllDel" onclick="listAllDell()">전체삭제</button>
+    <div class="bg"style="background-image: url(../2023web/images/hj.jpg);">
+        <div class="inpWrap">
+            <input type="hidden" class="num">
+            <input type="text" class="inp">
+            <button class="btn_input">입력</button>
+            <button class="btn_modi">수정</button>
+            <button class="btnAllDel" onclick="listAllDell()">전체삭제</button>
+        </div>
+        <div class="listView clearfix">
+            <ul></ul>
+            
+        </div>
     </div>
     <script>
         let listData = []
@@ -171,8 +179,10 @@
 
         function listAllDell(){
             listData = [];
-                        let valueData = JSON.stringify(listData)
+            let valueData = JSON.stringify(listData)
             localStorage.setItem("todoData",valueData)
+            btnIpEl.style.display = "inline-block"
+            btnMoEl.style.display = "none"
             viewData()
         }
     </script>
